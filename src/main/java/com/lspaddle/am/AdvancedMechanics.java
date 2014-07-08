@@ -1,6 +1,7 @@
 package com.lspaddle.am;
 
 import com.lspaddle.am.handler.ConfigurationHandler;
+import com.lspaddle.am.init.ModItems;
 import com.lspaddle.am.proxy.IProxy;
 import com.lspaddle.am.reference.Reference;
 import com.lspaddle.am.utlity.LogHelper;
@@ -26,6 +27,9 @@ public class AdvancedMechanics
         //sets up the configuration gui and file
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         FMLCommonHandler.instance().bus().register(new ConfigurationHandler());
+
+        //inits all the items
+        ModItems.init();
 
         LogHelper.info("Pre Initialization Complete!");
     }
